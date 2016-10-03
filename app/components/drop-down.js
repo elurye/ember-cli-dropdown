@@ -6,6 +6,8 @@ export default Em.Component.extend({
   optionLabelPath: '',
   didInsertElement: function() {
     this.$().find(`option[value='${this.value}']`).prop('selected', true);
+  },
+  willRender: function() {
     var _scope = this;
     this.$().on('change', function() {
       var optionValue = false;
